@@ -3,12 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1100, 511]"/>
-    </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1100, 500]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -48,16 +42,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="309" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="buttonNext" max="32767" attributes="0"/>
+                              <Component id="buttonRealizarAccion" max="32767" attributes="0"/>
                               <Component id="buttonBack" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -72,10 +66,10 @@
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
                   <EmptySpace pref="165" max="32767" attributes="0"/>
-                  <Component id="buttonNext" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="buttonRealizarAccion" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="buttonBack" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -92,17 +86,17 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="En las calles de Valledupar, viv&#xed;a un joven apasionado &#xa;llamado Oswald. Con sus ojos brillantes y su esp&#xed;ritu&#xa;intr&#xe9;pido, Oswald anhelana algo m&#xe1;s que las rutinas&#xa;diarias en su querido pueblo. Su coraz&#xf3;n lat&#xed;a al ritmo&#xa;de la velocidad y la emoci&#xf3;n de las carreras de autos,&#xa;una pasi&#xf3;n que hab&#xed;a alimentado desde que era ni&#xf1;o.&#xa;&#xa;Cada ma&#xf1;ana, Oswald se levantaba con un prop&#xf3;sito&#xa;claro en mente: Convertirse en el mejor piloto de&#xa;carreras que Valledupar hab&#xed;a visto jam&#xe1;s."/>
+                <Property name="text" type="java.lang.String" value="Oswald sab&#xed;a que para lograrlo, necesitaba algo m&#xe1;s que&#xa;determinaci&#xf3;n y habilidad. Necesitaba un veh&#xed;culo que&#xa;fuera una extensi&#xf3;n de su propio ser, un compa&#xf1;ero de&#xa;acero que pudiera llevarlo a trav&#xe9;s de los desaf&#xed;os que&#xa;enfrentar&#xed;a en las pistas.&#xa;&#xa;Escuchando y bailando vallenato, Oswald so&#xf1;aba con el&#xa;d&#xed;a en que su talento y su determinaci&#xf3;n lo llevar&#xed;an m&#xe1;s&#xa;all&#xe1; de los l&#xed;mites de Valledupar, hacia un mundo donde&#xa;pudiera hacer realidad sus sue&#xf1;os m&#xe1;s salvajes."/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="buttonNext">
+        <Component class="javax.swing.JButton" name="buttonRealizarAccion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Next"/>
+            <Property name="text" type="java.lang.String" value="Realizar Acci&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNextActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRealizarAccionActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonBack">

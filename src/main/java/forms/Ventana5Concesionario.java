@@ -8,18 +8,13 @@ package forms;
  *
  * @author Oswald David
  */
-public class Ventana2 extends javax.swing.JFrame {
+public class Ventana5Concesionario extends javax.swing.JFrame {
 
     /**
-     * Creates new form Form1
+     * Creates new form Ventana5Concesionario
      */
-    public Ventana2() {
+    public Ventana5Concesionario() {
         initComponents();
-        setResizable(false);
-    }
-    
-    public String StrToHtml(String texto) {
-        return "<html><p>" + texto + "</p></html>";
     }
 
     /**
@@ -34,22 +29,20 @@ public class Ventana2 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        buttonNext = new javax.swing.JButton();
+        buttonEntrar = new javax.swing.JButton();
         buttonBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1100, 511));
-        setPreferredSize(new java.awt.Dimension(1100, 500));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("En las calles de Valledupar, vivía un joven apasionado \nllamado Oswald. Con sus ojos brillantes y su espíritu\nintrépido, Oswald anhelana algo más que las rutinas\ndiarias en su querido pueblo. Su corazón latía al ritmo\nde la velocidad y la emoción de las carreras de autos,\nuna pasión que había alimentado desde que era niño.\n\nCada mañana, Oswald se levantaba con un propósito\nclaro en mente: Convertirse en el mejor piloto de\ncarreras que Valledupar había visto jamás.");
+        jTextArea1.setText("Y así, con el sol aún en el horizonte y el eco de sus sueños\nresonando en su mente, Oswald se preparaba para dar el\nsiguiente paso en su viaje hacia la grandeza. Hoy era el\ndía en que visitaría el concesionario loca, donde esperaba\nencontrar el automóvil que lo llevaría hacia sus sueños\nmás audaces. Con el corazón lleno de anticipación y los\nnervios bailando en su estómago, Oswald se encaminó \nhacia el inicio de su emocionante aventura.\n\n¡Vamos a comprar ese auto!");
         jScrollPane1.setViewportView(jTextArea1);
 
-        buttonNext.setText("Next");
-        buttonNext.addActionListener(new java.awt.event.ActionListener() {
+        buttonEntrar.setText("Entrar");
+        buttonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonNextActionPerformed(evt);
+                buttonEntrarActionPerformed(evt);
             }
         });
 
@@ -71,9 +64,9 @@ public class Ventana2 extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonNext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonBack)
+                            .addComponent(buttonEntrar))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -82,7 +75,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
-                .addComponent(buttonNext)
+                .addComponent(buttonEntrar)
                 .addGap(32, 32, 32)
                 .addComponent(buttonBack)
                 .addGap(43, 43, 43))
@@ -105,16 +98,15 @@ public class Ventana2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNextActionPerformed
-        Ventana3 ventana3 = new Ventana3();
-        ventana3.setVisible(true);
+    private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
+        Ventana6Auto ventana6 = new Ventana6Auto();
+        ventana6.setVisible(true);
         this.setVisible(false);
-        
-    }//GEN-LAST:event_buttonNextActionPerformed
+    }//GEN-LAST:event_buttonEntrarActionPerformed
 
     private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
-        FormularioPDF form = new FormularioPDF();
-        form.setVisible(true);
+        Ventana4Bailando ventana4 = new Ventana4Bailando();
+        ventana4.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonBackActionPerformed
 
@@ -135,28 +127,27 @@ public class Ventana2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana5Concesionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana5Concesionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana5Concesionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ventana2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ventana5Concesionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ventana2().setVisible(true);
+                new Ventana5Concesionario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBack;
-    private javax.swing.JButton buttonNext;
+    private javax.swing.JButton buttonEntrar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
