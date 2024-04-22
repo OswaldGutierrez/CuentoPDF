@@ -36,6 +36,7 @@ public class FormularioPDF extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         buttonGenerar = new javax.swing.JButton();
+        buttonStart = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,6 +51,13 @@ public class FormularioPDF extends javax.swing.JFrame {
         buttonGenerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonGenerarActionPerformed(evt);
+            }
+        });
+
+        buttonStart.setText("Start");
+        buttonStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonStartActionPerformed(evt);
             }
         });
 
@@ -75,8 +83,10 @@ public class FormularioPDF extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(buttonGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonGenerar, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(buttonStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -100,9 +110,11 @@ public class FormularioPDF extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(jLabel3))
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonStart)
+                .addGap(91, 91, 91)
                 .addComponent(buttonGenerar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clases/fondo5.jpg"))); // NOI18N
@@ -132,6 +144,12 @@ public class FormularioPDF extends javax.swing.JFrame {
         
         PruebaPDF.crearBlog(nombre, id, telefono);
     }//GEN-LAST:event_buttonGenerarActionPerformed
+
+    private void buttonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStartActionPerformed
+        Ventana2 ventana2 = new Ventana2();
+        ventana2.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonStartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,6 +188,7 @@ public class FormularioPDF extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonGenerar;
+    private javax.swing.JButton buttonStart;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
