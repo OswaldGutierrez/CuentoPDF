@@ -155,7 +155,7 @@ public class VentanaPDF extends javax.swing.JFrame {
         String telefono = txtTelefono.getText();
 
         try {
-            PruebaPDF.crearBlog(nombre, id, telefono);
+            PruebaPDF.crearBlog(nombre, id, telefono, 1);
         } catch (BadElementException ex) {
             Logger.getLogger(VentanaPDF.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

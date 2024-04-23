@@ -26,7 +26,6 @@ public class Ventana6Auto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonBuy = new javax.swing.JButton();
         buttonNext = new javax.swing.JButton();
         buttonBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -35,16 +34,6 @@ public class Ventana6Auto extends javax.swing.JFrame {
         button2024 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        buttonBuy.setBackground(new java.awt.Color(255, 204, 51));
-        buttonBuy.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        buttonBuy.setForeground(new java.awt.Color(255, 102, 0));
-        buttonBuy.setText("BUY");
-        buttonBuy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBuyActionPerformed(evt);
-            }
-        });
 
         buttonNext.setBackground(new java.awt.Color(51, 51, 51));
         buttonNext.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -72,16 +61,31 @@ public class Ventana6Auto extends javax.swing.JFrame {
         button2025.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         button2025.setForeground(new java.awt.Color(255, 255, 255));
         button2025.setText("2025");
+        button2025.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2025ActionPerformed(evt);
+            }
+        });
 
         button2023.setBackground(new java.awt.Color(0, 102, 255));
         button2023.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         button2023.setForeground(new java.awt.Color(255, 255, 255));
         button2023.setText("2023");
+        button2023.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2023ActionPerformed(evt);
+            }
+        });
 
         button2024.setBackground(new java.awt.Color(0, 102, 255));
         button2024.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         button2024.setForeground(new java.awt.Color(255, 255, 255));
         button2024.setText("2024");
+        button2024.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2024ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,30 +93,25 @@ public class Ventana6Auto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonBuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonNext, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                            .addComponent(buttonBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button2023, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(button2025, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(button2024, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonNext, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(buttonBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button2025, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(button2024, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(button2023, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(buttonBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(67, 67, 67)
                 .addComponent(button2023)
                 .addGap(22, 22, 22)
                 .addComponent(button2024)
                 .addGap(26, 26, 26)
                 .addComponent(button2025)
-                .addGap(30, 30, 30)
+                .addGap(90, 90, 90)
                 .addComponent(buttonNext)
                 .addGap(18, 18, 18)
                 .addComponent(buttonBack)
@@ -135,11 +134,23 @@ public class Ventana6Auto extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_buttonBackActionPerformed
 
-    private void buttonBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuyActionPerformed
+    private void button2023ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2023ActionPerformed
         VentanaPDF ventanaPdf = new VentanaPDF();
         ventanaPdf.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_buttonBuyActionPerformed
+    }//GEN-LAST:event_button2023ActionPerformed
+
+    private void button2024ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2024ActionPerformed
+        VentanaPDF1 ventanaPdf = new VentanaPDF1();
+        ventanaPdf.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button2024ActionPerformed
+
+    private void button2025ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2025ActionPerformed
+        VentanaPDF2 ventanaPdf = new VentanaPDF2();
+        ventanaPdf.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_button2025ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,7 +192,6 @@ public class Ventana6Auto extends javax.swing.JFrame {
     private javax.swing.JButton button2024;
     private javax.swing.JButton button2025;
     private javax.swing.JButton buttonBack;
-    private javax.swing.JButton buttonBuy;
     private javax.swing.JButton buttonNext;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

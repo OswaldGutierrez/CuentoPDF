@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class PruebaPDF {
 
-    public static void crearBlog(String nombre, String id, String telefono) throws BadElementException, IOException {
+    public static void crearBlog(String nombre, String id, String telefono, int opcion) throws BadElementException, IOException {
         Document doc = new Document();
         try {
             
@@ -41,7 +41,7 @@ public class PruebaPDF {
             Paragraph title = new Paragraph("Facturación", titleFont);
             Paragraph body = new Paragraph("Nombre: " + nombre + "\nID: " + id + "\nTeléfono: " + telefono, bodyFont);
             
-            ExcelLecturaTabla.leerArchivoExcel("C:\\Users\\Oswald David\\Documents\\NetBeansProjects\\CuentoPDF\\Datos.xlsx");
+            ExcelLecturaTabla.leerArchivoExcel("C:\\Users\\Oswald David\\Documents\\NetBeansProjects\\CuentoPDF\\Datos.xlsx", opcion);
             double precioVehiculo = ExcelLecturaTabla.precioVehiculo;
             Paragraph precio = new Paragraph("\nEl precio del vehículo es: " + precioVehiculo);
             
