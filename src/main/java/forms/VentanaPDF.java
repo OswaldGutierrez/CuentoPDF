@@ -5,6 +5,10 @@
 package forms;
 
 import clases.PruebaPDF;
+import com.itextpdf.text.BadElementException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -150,7 +154,13 @@ public class VentanaPDF extends javax.swing.JFrame {
         String id = txtID.getText();
         String telefono = txtTelefono.getText();
 
-        PruebaPDF.crearBlog(nombre, id, telefono);
+        try {
+            PruebaPDF.crearBlog(nombre, id, telefono);
+        } catch (BadElementException ex) {
+            Logger.getLogger(VentanaPDF.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPDF.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_buttonGenerarActionPerformed
 
     private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed

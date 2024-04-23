@@ -18,11 +18,22 @@ import javax.swing.JOptionPane;
  */
 public class PruebaPDF {
 
-    public static void crearBlog(String nombre, String id, String telefono) {
+    public static void crearBlog(String nombre, String id, String telefono) throws BadElementException, IOException {
+        Document doc = new Document();
         try {
-            Document doc = new Document();
-            PdfWriter.getInstance(doc, new FileOutputStream("Factura.pdf"));
+            
+            //PdfWriter.getInstance(doc, new FileOutputStream("Factura.pdf"));
+            PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream("Factura.pdf"));
+            
             doc.open();
+            
+            float documentWidth = doc.getPageSize().getWidth();
+            float lineaY = 725;
+            
+            PdfContentByte canvas = writer.getDirectContent();
+            canvas.moveTo(0, lineaY); // Mueve el cursor al punto inicial de la línea (en el eje Y)
+            canvas.lineTo(documentWidth, lineaY); // Dibuja la línea hasta el punto final (en el eje Y)
+            canvas.stroke(); // Dibuja la línea en el lienzo
 
             Font titleFont = FontFactory.getFont(BaseFont.TIMES_BOLD, 21, BaseColor.RED);
             Font bodyFont = FontFactory.getFont(BaseFont.HELVETICA, 12, BaseColor.BLACK);
@@ -32,24 +43,28 @@ public class PruebaPDF {
             
             ExcelLecturaTabla.leerArchivoExcel("C:\\Users\\Oswald David\\Documents\\NetBeansProjects\\CuentoPDF\\Datos.xlsx");
             double precioVehiculo = ExcelLecturaTabla.precioVehiculo;
-            Paragraph precio = new Paragraph("El precio del vehículo es: " + precioVehiculo);
+            Paragraph precio = new Paragraph("\nEl precio del vehículo es: " + precioVehiculo);
             
             double iva = MetodosPDF.calcularIVA(precioVehiculo);
             Paragraph precioIva = new Paragraph("El precio del vehículo con el impuesto IVA es: " + iva);
             
-            Paragraph descripcion = new Paragraph("Conforme a la transacción realizada, se ha procedido a la venta de un vehículo"
+            Paragraph descripcion = new Paragraph("\nConforme a la transacción realizada, se ha procedido a la venta de un vehículo"
                     + " de la marca Toyota, modelo 2023. El monto acordado por esta adquisición asciende a la cantidad de "
                     + precioVehiculo + ". Este acto comercial queda registrado bajo el código de interificación del vehículo"
                     + " en la base de datos del sistema Fasecolda. El vehículo ha sido adquirido por " + nombre + ", quien puede"
                     + " ser contactado mediante el número de teléfono " + telefono + " y está debidamente identificado con el siguiente ID: "
                     + id);
+            
+            Image image = Image.getInstance("C:/Users/Oswald David/Documents/NetBeansProjects/CuentoPDF/src/main/java/forms/Imagenes/Logo.png");
+            image.scaleAbsolute(80, 80);
 
+            doc.add(image);
             doc.add(title);
             doc.add(body);
             doc.add(precio);
             doc.add(precioIva);
             doc.add(descripcion);
-
+            
             doc.close();
         } catch (DocumentException | java.io.FileNotFoundException e) {
             e.printStackTrace();
