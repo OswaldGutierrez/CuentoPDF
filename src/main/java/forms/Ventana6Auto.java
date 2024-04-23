@@ -27,7 +27,6 @@ public class Ventana6Auto extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonBuy = new javax.swing.JButton();
-        buttonGenerarPDF = new javax.swing.JButton();
         buttonNext = new javax.swing.JButton();
         buttonBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -38,10 +37,11 @@ public class Ventana6Auto extends javax.swing.JFrame {
         buttonBuy.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         buttonBuy.setForeground(new java.awt.Color(255, 102, 0));
         buttonBuy.setText("BUY");
-
-        buttonGenerarPDF.setBackground(new java.awt.Color(153, 153, 153));
-        buttonGenerarPDF.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        buttonGenerarPDF.setText("Get PDF");
+        buttonBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBuyActionPerformed(evt);
+            }
+        });
 
         buttonNext.setBackground(new java.awt.Color(51, 51, 51));
         buttonNext.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -72,9 +72,8 @@ public class Ventana6Auto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonGenerarPDF, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                     .addComponent(buttonBuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonNext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonNext, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                     .addComponent(buttonBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1))
@@ -84,9 +83,7 @@ public class Ventana6Auto extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(118, 118, 118)
                 .addComponent(buttonBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(buttonGenerarPDF)
-                .addGap(41, 41, 41)
+                .addGap(118, 118, 118)
                 .addComponent(buttonNext)
                 .addGap(18, 18, 18)
                 .addComponent(buttonBack)
@@ -108,6 +105,12 @@ public class Ventana6Auto extends javax.swing.JFrame {
         ventana5.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonBackActionPerformed
+
+    private void buttonBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuyActionPerformed
+        VentanaPDF ventanaPdf = new VentanaPDF();
+        ventanaPdf.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonBuyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,7 +150,6 @@ public class Ventana6Auto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBack;
     private javax.swing.JButton buttonBuy;
-    private javax.swing.JButton buttonGenerarPDF;
     private javax.swing.JButton buttonNext;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

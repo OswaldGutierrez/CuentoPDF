@@ -30,7 +30,8 @@ public class Ventana3 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         buttonRealizarAccion = new javax.swing.JButton();
-        buttonBack = new javax.swing.JButton();
+        buttonNext = new javax.swing.JButton();
+        buttonBack1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,13 +56,23 @@ public class Ventana3 extends javax.swing.JFrame {
             }
         });
 
-        buttonBack.setBackground(new java.awt.Color(51, 51, 51));
-        buttonBack.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        buttonBack.setForeground(new java.awt.Color(255, 255, 255));
-        buttonBack.setText("BACK");
-        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+        buttonNext.setBackground(new java.awt.Color(51, 51, 51));
+        buttonNext.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        buttonNext.setForeground(new java.awt.Color(255, 255, 255));
+        buttonNext.setText("NEXT");
+        buttonNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBackActionPerformed(evt);
+                buttonNextActionPerformed(evt);
+            }
+        });
+
+        buttonBack1.setBackground(new java.awt.Color(51, 51, 51));
+        buttonBack1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        buttonBack1.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBack1.setText("BACK");
+        buttonBack1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBack1ActionPerformed(evt);
             }
         });
 
@@ -70,15 +81,21 @@ public class Ventana3 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonRealizarAccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(buttonRealizarAccion)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(buttonBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,9 +104,11 @@ public class Ventana3 extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonRealizarAccion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonBack)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonNext)
+                    .addComponent(buttonBack1))
+                .addGap(12, 12, 12))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clases/Fondo3.png"))); // NOI18N
@@ -119,11 +138,17 @@ public class Ventana3 extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_buttonRealizarAccionActionPerformed
 
-    private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
+    private void buttonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNextActionPerformed
+        Ventana5Concesionario ventana5 = new Ventana5Concesionario();
+        ventana5.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonNextActionPerformed
+
+    private void buttonBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBack1ActionPerformed
         Ventana2 ventana2 = new Ventana2();
         ventana2.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_buttonBackActionPerformed
+    }//GEN-LAST:event_buttonBack1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,7 +186,8 @@ public class Ventana3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonBack;
+    private javax.swing.JButton buttonBack1;
+    private javax.swing.JButton buttonNext;
     private javax.swing.JButton buttonRealizarAccion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
