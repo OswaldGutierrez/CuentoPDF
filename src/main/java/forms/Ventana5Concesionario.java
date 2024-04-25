@@ -121,8 +121,8 @@ public class Ventana5Concesionario extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonEntrarActionPerformed
 
     private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
-        Ventana4Bailando ventana4 = new Ventana4Bailando();
-        ventana4.setVisible(true);
+        VentanaAccion ventanaAccion = new VentanaAccion();
+        ventanaAccion.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonBackActionPerformed
 

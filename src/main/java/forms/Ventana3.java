@@ -133,8 +133,8 @@ public class Ventana3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonRealizarAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRealizarAccionActionPerformed
-        Ventana4Bailando ventana4 = new Ventana4Bailando();
-        ventana4.setVisible(true);
+        VentanaAccion ventanaAccion = new VentanaAccion();
+        ventanaAccion.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonRealizarAccionActionPerformed
 

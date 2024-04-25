@@ -150,7 +150,7 @@ public class VentanaPDF2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGenerarActionPerformed
-        String nombre = txtTelefono.getText();
+        String nombre = txtNombre1.getText();
         String id = txtID.getText();
         String telefono = txtTelefono.getText();
 
