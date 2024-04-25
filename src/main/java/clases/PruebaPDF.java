@@ -70,7 +70,7 @@ public class PruebaPDF {
             e.printStackTrace();
         }
 
-        JOptionPane.showMessageDialog(null, "Se creo el archivo 'Ejemplo_pdf_java.pdf' en la carpeta del proyecto");
+        JOptionPane.showMessageDialog(null, "Se creo la factura del vehículo en la carpeta del proyecto");
         
         
     }

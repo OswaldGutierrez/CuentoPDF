@@ -15,6 +15,8 @@ public class Ventana3 extends javax.swing.JFrame {
      */
     public Ventana3() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(this);
     }
 
     /**

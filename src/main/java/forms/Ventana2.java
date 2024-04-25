@@ -16,11 +16,9 @@ public class Ventana2 extends javax.swing.JFrame {
     public Ventana2() {
         initComponents();
         setResizable(false);
+        setLocationRelativeTo(this);
     }
     
-    public String StrToHtml(String texto) {
-        return "<html><p>" + texto + "</p></html>";
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +38,6 @@ public class Ventana2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1100, 511));
-        setPreferredSize(new java.awt.Dimension(1100, 500));
 
         jPanel1.setBackground(new java.awt.Color(193, 214, 244));
 
@@ -83,7 +80,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(

@@ -15,6 +15,8 @@ public class Ventana6Auto extends javax.swing.JFrame {
      */
     public Ventana6Auto() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(this);
     }
 
     /**

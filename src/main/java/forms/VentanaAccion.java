@@ -19,6 +19,8 @@ public class VentanaAccion extends javax.swing.JFrame {
      */
     public VentanaAccion() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -110,27 +112,41 @@ public class VentanaAccion extends javax.swing.JFrame {
         jLabel14.setEnabled(false);
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 730));
 
+        buttonBailar.setBackground(new java.awt.Color(255, 204, 0));
         buttonBailar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        buttonBailar.setForeground(new java.awt.Color(255, 102, 0));
+        buttonBailar.setText("DANCE");
+        buttonBailar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         buttonBailar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBailarActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonBailar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 50, 365));
+        jPanel1.add(buttonBailar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 100, 365));
 
+        buttonNext.setBackground(new java.awt.Color(51, 51, 51));
+        buttonNext.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        buttonNext.setForeground(new java.awt.Color(255, 255, 255));
+        buttonNext.setText("NEXT");
+        buttonNext.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonNextActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 363, 50, 183));
+        jPanel1.add(buttonNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 363, 100, 183));
 
+        buttonBack.setBackground(new java.awt.Color(51, 51, 51));
+        buttonBack.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        buttonBack.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBack.setText("BACK");
+        buttonBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBackActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 542, 50, 190));
+        jPanel1.add(buttonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 542, 100, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

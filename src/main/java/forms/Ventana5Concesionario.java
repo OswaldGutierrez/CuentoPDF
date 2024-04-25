@@ -15,6 +15,8 @@ public class Ventana5Concesionario extends javax.swing.JFrame {
      */
     public Ventana5Concesionario() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(this);
     }
 
     /**

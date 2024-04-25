@@ -21,6 +21,8 @@ public class VentanaPDF1 extends javax.swing.JFrame {
      */
     public VentanaPDF1() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(this);
     }
 
     /**
