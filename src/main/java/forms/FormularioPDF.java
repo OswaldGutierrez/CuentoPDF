@@ -4,7 +4,10 @@
  */
 package forms;
 
+import clases.ControladorLogin;
 import clases.PruebaPDF;
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,6 +23,18 @@ public class FormularioPDF extends javax.swing.JFrame {
         setResizable(false);
     }
 
+    public void setLoginListener(ActionListener listener){
+        buttonStart.addActionListener(listener);
+    }
+    
+    public String getUsername(){
+        return txtUsuario.getText();
+    }
+    
+    public String getPassword(){
+        return new String(jPasswordField1.getPassword());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,8 +48,8 @@ public class FormularioPDF extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        txtClave = new javax.swing.JTextField();
         buttonStart = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,9 +62,6 @@ public class FormularioPDF extends javax.swing.JFrame {
 
         txtUsuario.setBackground(new java.awt.Color(204, 204, 204));
         txtUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        txtClave.setBackground(new java.awt.Color(204, 204, 204));
-        txtClave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         buttonStart.setBackground(new java.awt.Color(204, 204, 204));
         buttonStart.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -75,7 +87,7 @@ public class FormularioPDF extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                            .addComponent(txtClave)))
+                            .addComponent(jPasswordField1)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(buttonStart, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -88,10 +100,13 @@ public class FormularioPDF extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(99, 99, 99)
                 .addComponent(buttonStart, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -119,9 +134,7 @@ public class FormularioPDF extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStartActionPerformed
-        Ventana2 ventana2 = new Ventana2();
-        ventana2.setVisible(true);
-        this.setVisible(false);
+        
         
     }//GEN-LAST:event_buttonStartActionPerformed
 
@@ -155,7 +168,9 @@ public class FormularioPDF extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioPDF().setVisible(true);
+                FormularioPDF formularioPDF = new FormularioPDF();
+                ControladorLogin controladorLogin = new ControladorLogin(formularioPDF);
+                formularioPDF.setVisible(true);
             }
         });
     }
@@ -166,7 +181,7 @@ public class FormularioPDF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtClave;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

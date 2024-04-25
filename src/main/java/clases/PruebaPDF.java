@@ -55,7 +55,7 @@ public class PruebaPDF {
                     + " ser contactado mediante el número de teléfono " + telefono + " y está debidamente identificado con el siguiente ID: "
                     + id);
             
-            Image image = Image.getInstance("C:/Users/Oswald David/Documents/NetBeansProjects/CuentoPDF/src/main/java/forms/Imagenes/Logo.png");
+            Image image = Image.getInstance("C:/Users/Oswald David/Documents/NetBeansProjects/CuentoPDF/src/main/java/imagenes/Logo.png");
             image.scaleAbsolute(80, 80);
 
             doc.add(image);
