@@ -9,6 +9,8 @@ import com.itextpdf.text.BadElementException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -23,6 +25,8 @@ public class Ventana6Auto extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(this);
+        buttonComprar.setEnabled(false);
+        agregarListenersCamposTexto();
     }
 
     /**
@@ -174,7 +178,7 @@ public class Ventana6Auto extends javax.swing.JFrame {
     public int getIndiceSeleccionado() {
         return jComboBox1.getSelectedIndex();
     }
-    
+
     private void buttonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonComprarActionPerformed
         int indiceSeleccionado = jComboBox1.getSelectedIndex();
         String nombre = txtNombre1.getText();
@@ -189,6 +193,38 @@ public class Ventana6Auto extends javax.swing.JFrame {
             Logger.getLogger(Ventana6Auto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonComprarActionPerformed
+
+    private void habilitarBotonComprar() {
+        // Verifica si todos los campos de texto tienen contenido
+        boolean camposLlenos = !txtNombre1.getText().isEmpty() && !txtID.getText().isEmpty() && !txtTelefono.getText().isEmpty();
+        // Habilita o deshabilita el botón según el estado de los campos de texto
+        buttonComprar.setEnabled(camposLlenos);
+    }
+
+    private void agregarListenersCamposTexto() {
+        // Crea un DocumentListener para verificar cuando el contenido de los campos de texto cambia
+        DocumentListener documentListener = new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                habilitarBotonComprar(); // Llama al método para habilitar o deshabilitar el botón
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                habilitarBotonComprar(); // Llama al método para habilitar o deshabilitar el botón
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                habilitarBotonComprar(); // Llama al método para habilitar o deshabilitar el botón
+            }
+        };
+
+        // Agrega el DocumentListener a cada campo de texto
+        txtNombre1.getDocument().addDocumentListener(documentListener);
+        txtID.getDocument().addDocumentListener(documentListener);
+        txtTelefono.getDocument().addDocumentListener(documentListener);
+    }
 
     /**
      * @param args the command line arguments

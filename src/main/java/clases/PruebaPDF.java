@@ -41,6 +41,7 @@ public class PruebaPDF {
             Paragraph title = new Paragraph("Facturación", titleFont);
             Paragraph body = new Paragraph("Nombre: " + nombre + "\nID: " + id + "\nTeléfono: " + telefono, bodyFont);
             
+            
             ExcelLecturaTabla.leerArchivoExcel("C:\\Users\\Oswald David\\Documents\\NetBeansProjects\\CuentoPDF\\Datos.xlsx", indice);
             double precioVehiculo = ExcelLecturaTabla.precioVehiculo;
             Paragraph precio = new Paragraph("\nEl precio del vehículo es: " + precioVehiculo);
