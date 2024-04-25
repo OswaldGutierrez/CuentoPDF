@@ -29,7 +29,7 @@ public class ExcelLecturaTabla {
     public static double precioVehiculo;
 
     // Método para leer el archivo Excel y obtener el precio del vehículo
-    public static void leerArchivoExcel(String rutaArchivo, int opcion) {
+    public static void leerArchivoExcel(String rutaArchivo, int indice) {
         File archivo = new File(rutaArchivo);
 
         try {
@@ -50,33 +50,12 @@ public class ExcelLecturaTabla {
                 while (columnas.hasNext()) {
                     columnaActual = columnas.next();
 
-                    switch (opcion) {
-                        case 1 -> {
-                            // Verifica si la celda actual es la celda CF11203
-                            if (filaActual.getRowNum() == 11202 && columnaActual.getColumnIndex() == 62) {
+                    if (filaActual.getRowNum() == 11202 && columnaActual.getColumnIndex() == (59 + indice)) {
                                 if (columnaActual.getCellType() == CellType.NUMERIC) {
                                     precioVehiculo = columnaActual.getNumericCellValue();
                                 }
                             }
-                        }
-
-                        case 2 -> {
-                            if (filaActual.getRowNum() == 11202 && columnaActual.getColumnIndex() == 63) {
-                                if (columnaActual.getCellType() == CellType.NUMERIC) {
-                                    precioVehiculo = columnaActual.getNumericCellValue();
-                                }
-                            }
-                        }
-                        case 3 -> {
-                            if (filaActual.getRowNum() == 11202 && columnaActual.getColumnIndex() == 64) {
-                                if (columnaActual.getCellType() == CellType.NUMERIC) {
-                                    precioVehiculo = columnaActual.getNumericCellValue();
-                                }
-                            }
-                        }
-                        default -> {
-                        }
-                    }
+                    
                     /*
                     // Resto del código para procesar otras celdas si es necesario
                     if (columnaActual.getCellType() == CellType.STRING) {
@@ -98,6 +77,7 @@ public class ExcelLecturaTabla {
 
             // Imprime el precio del vehículo después de salir del bucle
             System.out.println("El precio del vehículo es: " + precioVehiculo);
+            System.out.println("El indice es: " + indice);
             input.close();
             libro.close();
 

@@ -4,6 +4,12 @@
  */
 package forms;
 
+import clases.PruebaPDF;
+import com.itextpdf.text.BadElementException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Oswald David
@@ -31,9 +37,14 @@ public class Ventana6Auto extends javax.swing.JFrame {
         buttonNext = new javax.swing.JButton();
         buttonBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        button2025 = new javax.swing.JButton();
-        button2023 = new javax.swing.JButton();
-        button2024 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        buttonComprar = new javax.swing.JButton();
+        txtID = new javax.swing.JTextField();
+        txtNombre1 = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,65 +70,89 @@ public class Ventana6Auto extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clases/Fondo6.png"))); // NOI18N
 
-        button2025.setBackground(new java.awt.Color(0, 102, 255));
-        button2025.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        button2025.setForeground(new java.awt.Color(255, 255, 255));
-        button2025.setText("2025");
-        button2025.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox1.setBackground(new java.awt.Color(51, 153, 255));
+        jComboBox1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        buttonComprar.setBackground(new java.awt.Color(255, 204, 0));
+        buttonComprar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        buttonComprar.setForeground(new java.awt.Color(255, 102, 0));
+        buttonComprar.setText("COMPRAR");
+        buttonComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2025ActionPerformed(evt);
+                buttonComprarActionPerformed(evt);
             }
         });
 
-        button2023.setBackground(new java.awt.Color(0, 102, 255));
-        button2023.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        button2023.setForeground(new java.awt.Color(255, 255, 255));
-        button2023.setText("2023");
-        button2023.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2023ActionPerformed(evt);
-            }
-        });
+        txtID.setBackground(new java.awt.Color(204, 204, 204));
+        txtID.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        button2024.setBackground(new java.awt.Color(0, 102, 255));
-        button2024.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        button2024.setForeground(new java.awt.Color(255, 255, 255));
-        button2024.setText("2024");
-        button2024.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2024ActionPerformed(evt);
-            }
-        });
+        txtNombre1.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombre1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
+        txtTelefono.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setText("Nombre");
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel3.setText("ID");
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel4.setText("Teléfono");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonNext, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addComponent(buttonBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button2025, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addComponent(button2024, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addComponent(button2023, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(buttonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jLabel1))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(button2023)
-                .addGap(22, 22, 22)
-                .addComponent(button2024)
-                .addGap(26, 26, 26)
-                .addComponent(button2025)
-                .addGap(90, 90, 90)
-                .addComponent(buttonNext)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonNext)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -136,23 +171,24 @@ public class Ventana6Auto extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_buttonBackActionPerformed
 
-    private void button2023ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2023ActionPerformed
-        VentanaPDF ventanaPdf = new VentanaPDF();
-        ventanaPdf.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_button2023ActionPerformed
+    public int getIndiceSeleccionado() {
+        return jComboBox1.getSelectedIndex();
+    }
+    
+    private void buttonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonComprarActionPerformed
+        int indiceSeleccionado = jComboBox1.getSelectedIndex();
+        String nombre = txtNombre1.getText();
+        String id = txtID.getText();
+        String telefono = txtTelefono.getText();
 
-    private void button2024ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2024ActionPerformed
-        VentanaPDF1 ventanaPdf = new VentanaPDF1();
-        ventanaPdf.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_button2024ActionPerformed
-
-    private void button2025ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2025ActionPerformed
-        VentanaPDF2 ventanaPdf = new VentanaPDF2();
-        ventanaPdf.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_button2025ActionPerformed
+        try {
+            PruebaPDF.crearBlog(nombre, id, telefono, indiceSeleccionado);
+        } catch (BadElementException ex) {
+            Logger.getLogger(Ventana6Auto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana6Auto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_buttonComprarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,11 +226,16 @@ public class Ventana6Auto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton button2023;
-    private javax.swing.JButton button2024;
-    private javax.swing.JButton button2025;
     private javax.swing.JButton buttonBack;
+    private javax.swing.JButton buttonComprar;
     private javax.swing.JButton buttonNext;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtNombre1;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
